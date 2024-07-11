@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    body{
+        overflow: hidden;
+        background-color: #f5f5f5;
+        display: flex;
+        justify-content: center;
+        
+    }
+    .main {
+        margin-top: 90px;
+        border: 2px solid rgb(83, 83, 195);
+        background-color: aquamarine;
+        padding: 20px;
+    }
+    button {
+        background-color: #c18989;
+    }
+    button:hover {
+        background-color: #c2bebe;
+    }
+    input {
+        padding: 10px;
+        background-color: aliceblue;
+    }
+    input.text {
+        color: #0b27b1;
+    }
+</style>
+<body>
+    
+ <div class="main">
+    <h2 id="result">Result</h2>
+
+    <button onclick="view('add')">Add</button>
+    <button onclick="view('sub')">sub</button>
+    <button onclick="view('mul')">Multiple</button>
+    <button onclick="view('div')">division</button>
+    <input type="text" class="text" name=" " id="num1">
+    <input type="text" class="text" name=" " id="num2">
+ </div>
+    <script>
+        function view(x){
+            let c=''
+            console.log(x)
+            let a=parseFloat (document.getElementById('num1').value)
+            let b=parseFloat (document.getElementById('num2').value)
+            if(!a || !b){
+                alert('please enter the value')
+            }
+            else{
+                if(x=='add'){
+                    c=a+b
+                }
+                else if(x=='sub'){
+                    c=a-b
+                }
+                else if(x=='mul'){
+                    c=a*b
+                }
+                else if(x=='div'){
+                    c=a/b
+                }
+                                  
+                // switch(x){
+                //     case 'add':
+                //         console.log('adding');
+                //         c=a+b
+                //         break;
+                //     case 'sub':
+                //         console.log('substraction');
+                //         c=a-b
+                //         break;
+                //     case 'mul':
+                //         console.log('multiplication')
+                //         c=a*b
+                //         break;
+                //     case 'div':
+                //         console.log('division')
+                //         c=a/b
+                // }
+            }
+            document.getElementById('result').innerHTML =c
+        }
+    </script>
+</body>
+</html>
